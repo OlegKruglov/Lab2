@@ -288,5 +288,10 @@ namespace Lab2
             dashDotDotToolStripMenuItem.Checked = true;
 
         }
+
+        private void trackBar2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
