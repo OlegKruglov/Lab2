@@ -28,6 +28,7 @@ namespace Lab2
             numericUpDown2.Value = color.G;
             numericUpDown3.Value = color.B;
         }
+        
 
         private void hScrollBar1_ValueChanged(object sender, EventArgs e)
         {
@@ -95,6 +96,11 @@ namespace Lab2
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

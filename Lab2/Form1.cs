@@ -293,5 +293,12 @@ namespace Lab2
         {
 
         }
+
+        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Owner = this;
+            f.Show();
+        }
     }
 }
