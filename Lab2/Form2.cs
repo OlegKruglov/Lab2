@@ -28,12 +28,19 @@ namespace Lab2
             numericUpDown2.Value = color.G;
             numericUpDown3.Value = color.B;
         }
+
+        private void UpdateColor()
+        {
+            colorResult = Color.FromArgb(hScrollBar1.Value, hScrollBar2.Value, hScrollBar3.Value);
+            pictureBox1.BackColor = colorResult;
+        }
         
 
         private void hScrollBar1_ValueChanged(object sender, EventArgs e)
         {
             ScrollBar scrollbar = (ScrollBar)sender;
             NumericUpDown numericUpDown = (NumericUpDown)scrollbar.Tag;
+            numericUpDown.Maximum = 255;
             numericUpDown.Value = scrollbar.Value;
         }
 
@@ -48,6 +55,7 @@ namespace Lab2
         {
             ScrollBar scrollbar = (ScrollBar)sender;
             NumericUpDown numericUpDown = (NumericUpDown)scrollbar.Tag;
+            numericUpDown.Maximum = 255;
             numericUpDown.Value = scrollbar.Value;
         }
 
@@ -62,6 +70,7 @@ namespace Lab2
         {
             ScrollBar scrollbar = (ScrollBar)sender;
             NumericUpDown numericUpDown = (NumericUpDown)scrollbar.Tag;
+            numericUpDown.Maximum = 255;
             numericUpDown.Value = scrollbar.Value;
         }
 
@@ -98,9 +107,9 @@ namespace Lab2
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public Color color()
         {
-
+            return colorResult;
         }
     }
 }

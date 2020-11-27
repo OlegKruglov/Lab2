@@ -21,6 +21,7 @@ namespace Lab2
         Pen currentPen;
         Color historyColor;
         List<Image> History;
+        Form2 newForm;
 
         public Form1()
         {
@@ -28,11 +29,13 @@ namespace Lab2
             drawing = false;
             currentPen = new Pen(Color.Black);
             currentPen.Width = trackBar1.Value;
-            History = new List<Image>(); 
+            History = new List<Image>();
+            newForm = new Form2(Color.Black);
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             History.Clear();
             historyCounter = 0;
             Bitmap pic = new Bitmap(685, 368);
@@ -43,6 +46,11 @@ namespace Lab2
                 MessageBox.Show("Сначала создайте новый файл");
                 return;
             }
+        }
+
+        private Color checkColor()
+        {
+            return newForm.color();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,6 +117,7 @@ namespace Lab2
                 drawing = true;
                 oldLocation = e.Location;
                 currentPath = new GraphicsPath();
+                currentPen.Color = checkColor();
                 historyColor = currentPen.Color;
             }
             if (e.Button == MouseButtons.Right)
@@ -152,6 +161,7 @@ namespace Lab2
             currentPen.Color = historyColor;
             try
             {
+                currentPath = new GraphicsPath();
                 currentPath.Dispose();
             }
             catch { };
@@ -289,9 +299,15 @@ namespace Lab2
 
         }
 
-        private void trackBar2_ValueChanged(object sender, EventArgs e)
+        private void trackBarOP_Scroll(object sender, EventArgs e)
         {
+            currentPen.Color = Color.FromArgb(trackBarOP.Value, 0, 0, 0);
+        }
 
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2(Color.Black);
+            form2.Show();
         }
     }
 }

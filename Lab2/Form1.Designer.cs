@@ -58,14 +58,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.trackBarOP = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarOP)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -106,7 +106,7 @@
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -115,21 +115,21 @@
             this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(177, 6);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(138, 6);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem1.Image")));
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
             this.exitToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(141, 22);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
@@ -148,7 +148,7 @@
             this.undoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("undoToolStripMenuItem.Image")));
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
@@ -158,7 +158,7 @@
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.Z)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.redoToolStripMenuItem.Text = "Redo";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
@@ -171,7 +171,7 @@
             this.colorToolStripMenuItem});
             this.penToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("penToolStripMenuItem.Image")));
             this.penToolStripMenuItem.Name = "penToolStripMenuItem";
-            this.penToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.penToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.penToolStripMenuItem.Text = "Pen";
             // 
             // styleToolStripMenuItem
@@ -181,7 +181,7 @@
             this.dotToolStripMenuItem,
             this.dashDotDotToolStripMenuItem});
             this.styleToolStripMenuItem.Name = "styleToolStripMenuItem";
-            this.styleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.styleToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.styleToolStripMenuItem.Text = "Style";
             // 
             // solidToolStripMenuItem
@@ -208,7 +208,7 @@
             // colorToolStripMenuItem
             // 
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.colorToolStripMenuItem.Text = "Color";
             // 
             // helpToolStripMenuItem
@@ -285,6 +285,7 @@
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(109, 68);
             this.toolStripButton4.Text = "toolStripButton4";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // toolStripButton5
             // 
@@ -299,9 +300,13 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Location = new System.Drawing.Point(115, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(673, 368);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
@@ -311,6 +316,7 @@
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(591, 411);
+            this.trackBar1.Maximum = 30;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(197, 45);
             this.trackBar1.TabIndex = 3;
@@ -318,20 +324,21 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.trackBar2);
+            this.panel1.Controls.Add(this.trackBarOP);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(115, 411);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(673, 25);
             this.panel1.TabIndex = 4;
             // 
-            // trackBar2
+            // trackBarOP
             // 
-            this.trackBar2.Location = new System.Drawing.Point(210, 0);
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(208, 45);
-            this.trackBar2.TabIndex = 1;
-            this.trackBar2.ValueChanged += new System.EventHandler(this.trackBar2_ValueChanged);
+            this.trackBarOP.Location = new System.Drawing.Point(210, 0);
+            this.trackBarOP.Maximum = 255;
+            this.trackBarOP.Name = "trackBarOP";
+            this.trackBarOP.Size = new System.Drawing.Size(208, 45);
+            this.trackBarOP.TabIndex = 1;
+            this.trackBarOP.Scroll += new System.EventHandler(this.trackBarOP_Scroll);
             // 
             // label1
             // 
@@ -363,7 +370,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarOP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,7 +407,7 @@
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.TrackBar trackBarOP;
     }
 }
 
