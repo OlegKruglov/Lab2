@@ -30,7 +30,7 @@ namespace Lab2
             currentPen = new Pen(Color.Black);
             currentPen.Width = trackBar1.Value;
             History = new List<Image>();
-            newForm = new Form2(Color.Black);
+            newForm = new Form2(Form2.colorResult);
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -119,6 +119,8 @@ namespace Lab2
                 currentPath = new GraphicsPath();
                 currentPen.Color = checkColor();
                 historyColor = currentPen.Color;
+                currentPen.Color = Form2.colorResult;
+                // Console.WriteLine(currentPen.Color);
             }
             if (e.Button == MouseButtons.Right)
             {
@@ -301,12 +303,15 @@ namespace Lab2
 
         private void trackBarOP_Scroll(object sender, EventArgs e)
         {
-            currentPen.Color = Color.FromArgb(trackBarOP.Value, 0, 0, 0);
+            currentPen.Color = Color.FromArgb(trackBarOP.Value, Form2.colorResult);
+            Console.WriteLine(currentPen.Color);
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(Color.Black);
+            Form2 form2 = new Form2(Form2.colorResult);
+            Form2.pictureBox1.BackColor = Form2.colorResult;
+
             form2.Show();
         }
     }

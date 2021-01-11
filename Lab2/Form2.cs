@@ -12,7 +12,7 @@ namespace Lab2
 {
     public partial class Form2 : Form
     {
-        Color colorResult;
+        public static Color colorResult;
         public Form2(Color color)
         {
             InitializeComponent();
@@ -27,12 +27,6 @@ namespace Lab2
             numericUpDown1.Value = color.R;
             numericUpDown2.Value = color.G;
             numericUpDown3.Value = color.B;
-        }
-
-        private void UpdateColor()
-        {
-            colorResult = Color.FromArgb(hScrollBar1.Value, hScrollBar2.Value, hScrollBar3.Value);
-            pictureBox1.BackColor = colorResult;
         }
         
 
@@ -85,6 +79,7 @@ namespace Lab2
         {
             colorResult = Color.FromArgb(hScrollBar1.Value, hScrollBar2.Value, hScrollBar3.Value);
             pictureBox1.BackColor = colorResult;
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -99,17 +94,25 @@ namespace Lab2
                 colorResult = colorDialog.Color;
 
                 UpdateColor();
+
+                pictureBox1.BackColor = colorResult;
             }    
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            pictureBox1.BackColor = colorResult;
+            UpdateColor();
         }
 
         public Color color()
         {
             return colorResult;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
